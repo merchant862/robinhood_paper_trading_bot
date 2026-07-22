@@ -11,6 +11,7 @@ This version does not trade real funds. It watches Robinhood Chain market feeds,
 - Uses DexScreener only for delayed enrichment and backup discovery.
 - Stores tokens, pools, snapshots, paper trades, alerts, and wallet events in MySQL.
 - Opens virtual paper trades when a token score passes the configured threshold.
+- Monitors open paper trades for PnL, milestones, stop loss, and virtual exits.
 - Sends WhatsApp alerts through Green API, with dry-run mode enabled by default.
 
 ## Current Safety Mode
@@ -113,9 +114,26 @@ CHAIN_MAX_BLOCK_RANGE=200
 PAPER_TRADE_USD=50
 PAPER_ENTRY_MIN_SCORE=70
 PAPER_MAX_OPEN_TRADES=20
+PAPER_MONITOR_MS=60000
+PAPER_SUMMARY_MS=3600000
+PAPER_STOP_LOSS_PERCENT=-50
+PAPER_TAKE_PROFIT_PERCENT=100
+PAPER_MOONBAG_PROFIT_PERCENT=500
+PAPER_MAX_HOLD_HOURS=24
 ```
 
 The bot creates a virtual entry when the score is high enough. The score is intentionally simple in this first version and will improve as real data comes in.
+
+Open paper trades are checked through DexScreener pair data. The bot records new snapshots and sends alerts for:
+
+- 100%+ PnL milestone
+- 200%+ PnL milestone
+- 500%+ moonbag target
+- configured stop loss
+- configured max hold exit
+- periodic summary
+
+After pulling changes on the server, run `npm run db:sync` again so Sequelize adds the new paper-trade monitoring columns.
 
 ## Scripts
 

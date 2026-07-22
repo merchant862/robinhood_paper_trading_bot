@@ -40,6 +40,12 @@ module.exports = {
     tradeUsd: numberEnv('PAPER_TRADE_USD', 50),
     minScore: numberEnv('PAPER_ENTRY_MIN_SCORE', 70),
     maxOpenTrades: numberEnv('PAPER_MAX_OPEN_TRADES', 20),
+    monitorMs: numberEnv('PAPER_MONITOR_MS', 60000),
+    summaryMs: numberEnv('PAPER_SUMMARY_MS', 3600000),
+    stopLossPercent: numberEnv('PAPER_STOP_LOSS_PERCENT', -50),
+    takeProfitPercent: numberEnv('PAPER_TAKE_PROFIT_PERCENT', 100),
+    moonbagProfitPercent: numberEnv('PAPER_MOONBAG_PROFIT_PERCENT', 500),
+    maxHoldHours: numberEnv('PAPER_MAX_HOLD_HOURS', 24),
   },
   scanner: {
     sequencerFeedEnabled: boolEnv('SEQUENCER_FEED_ENABLED', true),
