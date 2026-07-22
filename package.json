@@ -1,0 +1,22 @@
+{
+  "name": "robinhood-paper-bot",
+  "version": "0.1.0",
+  "description": "Robinhood Chain meme-token paper trading scanner",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "db:sync": "node src/scripts/sync-db.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.5",
+    "mysql2": "^3.11.5",
+    "pino": "^9.6.0",
+    "pino-pretty": "^13.0.0",
+    "sequelize": "^6.37.5",
+    "ws": "^8.18.0"
+  }
+}

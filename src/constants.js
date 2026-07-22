@@ -1,0 +1,19 @@
+module.exports = {
+  ZERO_ADDRESS: '0x0000000000000000000000000000000000000000',
+  WETH: '0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73',
+  USDG: '0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168',
+  uniswap: {
+    v2Factory: '0x8bcEaA40B9AcdfAedF85AdF4FF01F5Ad6517937f',
+    v3Factory: '0x1f7d7550B1b028f7571E69A784071F0205FD2EfA',
+    v4PoolManager: '0x8366a39cc670b4001a1121b8f6a443a643e40951',
+    universalRouter: '0x8876789976decbfcbbbe364623c63652db8c0904',
+  },
+  launchpads: {
+    ponsActiveFactory: '0xA5aAb3F0c6EeadF30Ef1D3Eb997108E976351feB',
+    ponsLegacyFactory: '0x0c37a24F5D23A486FA692d1500881d698B1F77a4',
+  },
+  quoteTokens: new Set([
+    '0x0bd7d308f8e1639fab988df18a8011f41eacad73',
+    '0x5fc5360d0400a0fd4f2af552add042d716f1d168',
+  ]),
+};
